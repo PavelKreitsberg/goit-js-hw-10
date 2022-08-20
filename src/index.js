@@ -8,7 +8,7 @@ const debounce = require('lodash.debounce');
 
 const DEBOUNCE_DELAY = 300;
 
-refs = {
+const refs = {
     searchBox: document.querySelector('#search-box'),
     countryList: document.querySelector('.country-list'),
     countryInfo: document.querySelector('.country-info'),
