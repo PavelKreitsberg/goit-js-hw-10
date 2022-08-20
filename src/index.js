@@ -76,3 +76,10 @@ refs.searchBox.addEventListener('input', debounce((evt) => {
     })
         .catch(error => console.log(error))
 }, DEBOUNCE_DELAY))
+
+refs.countryList.addEventListener('click', (evt) => {
+    fetchCountries(evt.target.textContent.trim()).then(res => {
+        const exactCountry = res.filter(value => value.name.common === evt.target.textContent.trim())
+        createCountryInfoMarkup(exactCountry);
+    }).catch(error => console.log(error))
+})
